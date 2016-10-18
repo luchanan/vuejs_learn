@@ -1,6 +1,6 @@
-# v
+# vuejs2.0
 
-> v
+> vuejs2.0 learn
 
 ## Build Setup
 
