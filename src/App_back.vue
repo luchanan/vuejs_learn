@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <FirstComponent></FirstComponent>
+    <dark></dark>
   </div>
 </template>
+
 <script>
-import FirstComponent from './components/FirstComponent'
+import Dark from './components/Hello'
+
 export default {
   name: 'app',
   components: {
-    FirstComponent
+    Dark
   }
 }
 </script>
