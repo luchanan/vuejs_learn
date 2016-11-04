@@ -13,5 +13,7 @@
 <style scoped>
   h2{
     background: red;
+    display: flex;
+    animation-name: dropAnim1;
   }
 </style>

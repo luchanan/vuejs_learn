@@ -6,7 +6,7 @@
       <li><router-link to="/first">点我跳转到第一页</router-link></li>
       <li><router-link to="/second">点我跳转到第二页</router-link></li>
     </ul>
-    <router-view class="view"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -19,13 +19,17 @@ export default {
 }
 </script>
 
-<style>
-#app {
+<style lang='scss'>
+@import "./assets/scss/test.scss";
+#app1 {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  diplay:flex;
+  animation-name: dropAnim1;
+  & .red{
+    color:red;
+  }
 }
 </style>

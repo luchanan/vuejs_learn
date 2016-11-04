@@ -56,6 +56,10 @@ module.exports = {
         loader: 'json'
       },
       {
+        test: /\.scss$/,
+        loader: "style!css!postcss!sass"
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {
@@ -80,7 +84,7 @@ module.exports = {
     loaders: utils.cssLoaders(),
     postcss: [
       require('autoprefixer')({
-        browsers: ['last 2 versions']
+        browsers: ['last 2 versions','Android >= 4.0','iOS >= 7']
       })
     ]
   }
