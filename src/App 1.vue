@@ -3,10 +3,10 @@
     <img src="./assets/logo.png">
     <FirstComponent></FirstComponent>
     <ul>
-      <li><router-link to="/first">点我跳转到第一页</router-link></li>
-      <li><router-link to="/second">点我跳转到第二页</router-link></li>
+      <li><router-link to="/foo">点我跳转到第一页</router-link></li>
+      <li><router-link to="/bar">点我跳转到第二页</router-link></li>
     </ul>
-    <router-view class="view"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 <script>
