@@ -1,5 +1,5 @@
 html,body{
 	background:$color;
   animation-name: dropAnim1;
-  diplay:flex;
+  display:flex;
 }

@@ -55,10 +55,10 @@ module.exports = {
         test: /\.json$/,
         loader: 'json'
       },
-      {
+      /*{
         test: /\.scss$/,
         loader: "style!css!postcss!sass"
-      },
+      },*/
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',

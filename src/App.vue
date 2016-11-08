@@ -18,7 +18,32 @@ export default {
   }
 }
 </script>
-
+<style type="text/css">
+  html, body {
+    background: #fff;
+    -webkit-animation-name: dropAnim1;
+    animation-name: dropAnim1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #app1 {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-animation-name: dropAnim1;
+    animation-name: dropAnim1;
+  }
+  #app1 .red {
+    color: blue;
+  }
+</style>
 <style lang='scss'>
 @import "./assets/scss/test.scss";
 #app1 {
@@ -27,7 +52,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  diplay:flex;
+  display:flex;
   animation-name: dropAnim1;
   & .red{
     color:$color;
