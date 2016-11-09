@@ -1,5 +1,5 @@
 <template>
-  <div id="app1">
+  <div id="app">
     <router-view></router-view>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 </script>
 <style lang='scss'>
 @import "./assets/scss/test.scss";
-#app1 {
+#app {
   $color:blue;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
