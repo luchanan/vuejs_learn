@@ -5,6 +5,7 @@
     </div>
 </template>
 <script>
+    import $ from 'jquery'
     import homeHeader from '../../components/home/home-header.vue'
     import HomeBanner from '../../components/home/home-banner.vue'
     export default{
@@ -17,6 +18,13 @@
       components: {
         'home-header': homeHeader,
         'home-banner': HomeBanner
+      },
+
+      methods: {
+        addTodo: function () {
+          $('.a').click()
+        }
+
       }
     }
 </script>

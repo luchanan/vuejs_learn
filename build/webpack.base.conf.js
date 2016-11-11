@@ -19,13 +19,19 @@ module.exports = {
       'vue$': 'vue/dist/vue',
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components'),
-      'flexible': path.resolve(__dirname, '../src/assets/js/lib/flexible')
+      'components': path.resolve(__dirname, '../src/components')
     }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
+  plugins: [
+      // new  webpack.optimize.CommonsChunkPlugin('common.js', ['main1', 'main2'])
+      /* new webpack.ProvidePlugin({
+        jQuery: "jquery",
+        $: "jquery"
+      }) */
+  ],
   module: {
     preLoaders: [
       {
