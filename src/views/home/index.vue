@@ -2,10 +2,11 @@
     <div class="container">
         <home-header></home-header>
         <home-banner></home-banner>
+        <button  v-on:click="addTodo" class="btn">点击</button>
     </div>
 </template>
 <script>
-    import $ from 'jquery'
+    // import $ from 'jquery'
     import homeHeader from '../../components/home/home-header.vue'
     import HomeBanner from '../../components/home/home-banner.vue'
     export default{
@@ -22,7 +23,8 @@
 
       methods: {
         addTodo: function () {
-          $('.a').click()
+          // window.alert($('.btn').get(0).tagName)
+          // console.log($.md5('a'))
         }
 
       }

@@ -2,7 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
-
+var webpack = require("webpack")
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -19,19 +19,24 @@ module.exports = {
       'vue$': 'vue/dist/vue',
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      //'jquery': path.resolve(__dirname, '../src/assets/js/lib/jquery/jquery')
+      'jquery':'jquery'
     }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   plugins: [
-      // new  webpack.optimize.CommonsChunkPlugin('common.js', ['main1', 'main2'])
-      /* new webpack.ProvidePlugin({
-        jQuery: "jquery",
-        $: "jquery"
-      }) */
+    //new  webpack.optimize.CommonsChunkPlugin('common.js', ['main1', 'main2'])
+    new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      $: "jquery"
+    })
   ],
+  externals: {
+    wx:'jWeixin'
+  },
   module: {
     preLoaders: [
       {
@@ -48,6 +53,10 @@ module.exports = {
       }
     ],
     loaders: [
+      /*{
+       test: require.resolve('jquery'),
+       loader: 'expose?jQuery!expose?$'
+       },*/
       {
         test: /\.vue$/,
         loader: 'vue'
