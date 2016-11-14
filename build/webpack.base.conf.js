@@ -3,6 +3,7 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 var webpack = require("webpack")
+
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -21,7 +22,8 @@ module.exports = {
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
       //'jquery': path.resolve(__dirname, '../src/assets/js/lib/jquery/jquery')
-      'jquery':'jquery'
+	  'md5': path.resolve(__dirname, '../src/assets/js/lib/jquery/jQuery.md5.js'),
+	  // 'jquery':'jquery'
     }
   },
   resolveLoader: {
@@ -30,9 +32,9 @@ module.exports = {
   plugins: [
     //new  webpack.optimize.CommonsChunkPlugin('common.js', ['main1', 'main2'])
     new webpack.ProvidePlugin({
-      jQuery: "jquery",
-      $: "jquery"
-    })
+		$: "jquery",
+		jQuery: "jquery"
+	})
   ],
   externals: {
     wx:'jWeixin'
@@ -43,13 +45,13 @@ module.exports = {
         test: /\.vue$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: [/node_modules/,/libs/]
       },
       {
         test: /\.js$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: [/node_modules/,/libs/]
       }
     ],
     loaders: [

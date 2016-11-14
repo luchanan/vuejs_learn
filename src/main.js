@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import routers from './routers'
-// require('./assets/js/lib/flexible/flexible.js')
+// require('assets/js/lib/flexible/flexible.js')
+// require('assets/js/lib/flexible/flexible.js')
 // import './assets/js/lib/bootstrap/bootstrap'
+// import 'assets/js/lib/flexible/flexible.js'
+// require('libs/js/flexible.js')
 // 引入css
 import './assets/css/test.css'
 import wx from 'wx'

@@ -6,7 +6,8 @@
     </div>
 </template>
 <script>
-    // import $ from 'jquery'
+    import $ from 'jquery'
+    import 'md5'
     import homeHeader from '../../components/home/home-header.vue'
     import HomeBanner from '../../components/home/home-banner.vue'
     export default{
@@ -23,8 +24,9 @@
 
       methods: {
         addTodo: function () {
-          // window.alert($('.btn').get(0).tagName)
-          // console.log($.md5('a'))
+          console.log($)
+          window.alert($('.btn').get(0).tagName)
+          console.log($.md5('a'))
         }
 
       }
