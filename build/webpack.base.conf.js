@@ -21,9 +21,9 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
-      //'jquery': path.resolve(__dirname, '../src/assets/js/lib/jquery/jquery')
-	  'md5': path.resolve(__dirname, '../src/assets/js/lib/jquery/jQuery.md5.js'),
-	  // 'jquery':'jquery'
+      // 'jquery': path.resolve(__dirname, '../src/assets/js/lib/jquery/jquery'),//如果是本地的话
+	    'md5': path.resolve(__dirname, '../src/assets/js/lib/jquery/jQuery.md5.js'),
+	    // 'jquery':'jquery'
     }
   },
   resolveLoader: {
@@ -32,9 +32,9 @@ module.exports = {
   plugins: [
     //new  webpack.optimize.CommonsChunkPlugin('common.js', ['main1', 'main2'])
     new webpack.ProvidePlugin({
-		$: "jquery",
-		jQuery: "jquery"
-	})
+      $: "jquery",
+      jQuery: "jquery"
+    })
   ],
   externals: {
     wx:'jWeixin'
@@ -56,9 +56,9 @@ module.exports = {
     ],
     loaders: [
       /*{
-       test: require.resolve('jquery'),
-       loader: 'expose?jQuery!expose?$'
-       },*/
+        test: require.resolve('jquery'),
+        loader: 'expose?$!expose?jQuery!jquery'
+      },*/
       {
         test: /\.vue$/,
         loader: 'vue'
