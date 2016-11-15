@@ -7,8 +7,8 @@
 </template>
 <script>
     import $ from 'jquery'
-    // import $ from 'expose?$!expose?jQuery!jquery'
     import 'md5'
+    // import $ from 'expose?$!expose?jQuery!jquery'
     import homeHeader from '../../components/home/home-header.vue'
     import HomeBanner from '../../components/home/home-banner.vue'
     export default{
