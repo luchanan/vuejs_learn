@@ -3,11 +3,12 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 var webpack = require("webpack")
-
+//var libs=path.resolve(__dirname, '../src/assets/js/lib/')
 module.exports = {
   entry: {
     app: './src/main.js',
-    vendor:['md5','base64']
+    vendor:'./src/assets/js/lib/base64'
+    //vendor:['md5','base64']
   },
   output: {
     path: config.build.assetsRoot,
@@ -33,11 +34,15 @@ module.exports = {
   },
   plugins: [
     //new  webpack.optimize.CommonsChunkPlugin('common.js', ['main1', 'main2'])
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+    //new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
     /*new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     })*/
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor.bundle",
+      chunks: ["vendor"]
+    })
   ],
   externals: {
     wx:'jWeixin',
@@ -50,13 +55,14 @@ module.exports = {
         test: /\.vue$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: [/node_modules/,/libs/]
+        exclude: [/node_modules/]
+        //exclude: [/node_modules/,libs]//多个的话
       },
       {
         test: /\.js$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: [/node_modules/,/libs/]
+        exclude: [/node_modules/]
       }
     ],
     loaders: [
