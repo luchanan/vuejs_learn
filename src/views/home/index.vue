@@ -8,6 +8,8 @@
 <script>
     import $ from 'jquery'
     import 'md5'
+    import base64 from 'base64'
+    console.log(base64)
     // import $ from 'expose?$!expose?jQuery!jquery'
     import homeHeader from '../../components/home/home-header.vue'
     import HomeBanner from '../../components/home/home-banner.vue'
@@ -34,5 +36,4 @@
     }
 </script>
 <style lang='scss'>
-  @import "../../assets/scss/index.scss";
 </style>

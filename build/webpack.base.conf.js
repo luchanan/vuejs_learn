@@ -6,8 +6,8 @@ var webpack = require("webpack")
 //var libs=path.resolve(__dirname, '../src/assets/js/lib/')
 module.exports = {
   entry: {
-    app: './src/main.js',
-    vendor:'./src/assets/js/lib/base64'
+    app: './src/main.js'
+    //vendor:'./src/assets/js/lib/base64'
     //vendor:['md5','base64']
   },
   output: {
@@ -23,7 +23,7 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
-      // 'base64':  path.resolve(__dirname, '../src/assets/js/lib/base64'),
+      //'base64':  path.resolve(__dirname, '../src/assets/js/lib/base64'),
       // 'jquery': path.resolve(__dirname, '../src/assets/js/lib/jquery/jquery'),//如果是本地的话
 	    'md5': path.resolve(__dirname, '../src/assets/js/lib/jquery/jQuery.md5.js'),
 	    // 'jquery':'jquery'
@@ -34,7 +34,7 @@ module.exports = {
   },
   plugins: [
     //new  webpack.optimize.CommonsChunkPlugin('common.js', ['main1', 'main2'])
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+    // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
     /*new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
@@ -48,7 +48,7 @@ module.exports = {
   externals: {
     wx:'jWeixin',
     'jquery':'jQuery',
-    'base64':'base64'
+    'base64':'Base64'
   },
   module: {
     preLoaders: [

@@ -7,7 +7,7 @@ import routers from './routers'
 // import 'assets/js/lib/flexible/flexible.js'
 // require('libs/js/flexible.js')
 // 引入css
-import './assets/css/test.css'
+import './assets/scss/common.scss'
 import wx from 'wx'
 console.log(wx)
 // 路由器会创建一个 App 实例，并且挂载到选择符 #app 匹配的元素上。

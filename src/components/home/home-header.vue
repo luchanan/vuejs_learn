@@ -1,18 +1,30 @@
 <template>
-    <h1>{{ msg }}</h1>
+  <header class="padding_24 clearfix">
+    <search-icon class="float_left"></search-icon>
+    <service-icon class="float_right"></service-icon>
+  </header>
 </template>
 
 <script>
-export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: '头部'
+  import service from '../common/service-icon.vue'
+  import search from '../common/search-icon.vue'
+  export default {
+    data () {
+      return {
+        msg: '头部'
+      }
+    },
+
+    components: {
+      'service-icon': service,
+      'search-icon': search
     }
+
   }
-}
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+  header{
 
+  }
 </style>

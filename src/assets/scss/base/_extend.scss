@@ -1,0 +1,40 @@
+.pointer{
+   cursor:pointer;
+ }
+.block{
+  display: block;
+}
+.none{
+  display: none;
+}
+.inline_block{
+  display: inline-block;
+}
+.cover{
+  background-size:cover !important;
+}
+.contain{
+  background-size:contain !important;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix{
+  zoom: 1;
+}
+.float_left{
+  float:left;
+}
+.float_right{
+  float:right;
+}
+.padding_l_r_24{
+  padding:0 px2rem(24);
+}
+.padding_24{
+  padding:px2rem(24);
+}
