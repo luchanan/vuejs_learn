@@ -1,0 +1,220 @@
+footer{
+    overflow:hidden;
+    padding:px2rem(11) px2rem(20);
+    border-top:solid 1px #e1e9f0;
+    z-index: 999;
+    background:#fff;
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    a{
+        margin-right:px2rem(24);
+    }
+    .btn_wrap{
+        padding:0;
+    }
+    .btn{
+        &.buy{
+            background:#fe7276;
+        }
+        vertical-align:top;
+        display:inline-block;
+        background:$yellow;
+        color:#fff;
+        @include px2px(font-size,32);
+        border-radius:2px;
+        width:px2rem(203) !important;
+        text-align:center;
+        line-height:px2rem(78) !important;
+        height: px2rem(78);
+    }
+    .btn_wrap,.icon_wrap{
+        a{
+            display:inline-block;
+        }
+    }
+    .btn_wrap{
+        a{
+            float:left;
+            &:last-child{
+                margin-right:0;
+            }
+        }
+    }
+    .icon_wrap{
+        a{
+            float:left;
+        }
+    }
+    .icon{
+        border:solid 1px #e1e9f0;
+        border-radius:2px;
+        width:px2rem(112);
+        height:px2rem(78);
+        position:relative;
+        span{
+            display:inline-block;
+            position:absolute;
+            left:50%;
+            top:50%;
+            width:px2rem(49);
+            height:px2rem(48);
+            margin-left:px2rem(-24.5);
+            margin-top:px2rem(-24);
+            background:url(../images/product/client.png) scroll no-repeat center center;
+            background-size:contain;
+        }
+        &.shopping{
+            span{
+                background:url(../images/product/shopping_cart.png) scroll no-repeat center center;
+                background-size:contain;
+                &:after{
+                    content: attr(data-count);
+                    position: absolute;
+                    right:px2rem(-20);
+                    top:px2rem(-5);
+                    @include px2px(font-size,18);
+                    /*width:px2rem(36);
+                    height: px2rem(24);
+                    line-height:px2rem(24);*/
+                    @include px2px(width,36);
+                    @include px2px(height,24);
+                    @include px2px(line-height,24);
+                    text-align: center;
+                    border-radius:px2rem(20);
+                    color: #ffffff;
+                    background:$yellow;
+                    white-space: pre;
+                }
+                &[data-count='0']:after{
+                    display:none;
+                }
+            }
+        }
+    }
+}
+[data-page='page_buy']{
+    padding:0 0 0 px2rem(20);
+    @include px2px(font-size,24);
+    line-height:px2rem(100);
+    color:#8fa0b1;
+    .yellow{
+        @include px2px(font-size,32);
+    }
+    .confirm{
+        color:#fff;
+        @include px2px(font-size,32);
+        line-height:px2rem(100);
+        background:$color_FC5D7B;
+        width:100%;
+        text-align:center;
+        &:disabled{
+            background:#ccc;
+        }
+    }
+
+}
+[data-page='page_pay_confirm']{
+    padding:0 0 0 px2rem(20);
+    @include px2px(font-size,32);
+    .btn_pay{
+        border:none;
+        background:$color_FC5D7B;
+        color:#fff;
+        @include px2px(font-size,32);
+        height:px2rem(100);
+        line-height:px2rem(100);
+        width:px2rem(230);
+    }
+    a{
+        margin:0;
+    }
+    .p{
+        padding-bottom:px2rem(10);
+    }
+}
+.icon_footer{
+    overflow:hidden;
+    padding:px2rem(4) 0;
+    border-top:solid 1px #e1e9f0;
+    z-index: 999;
+    background:#fff;
+    position:fixed !important;
+    left:0;
+    bottom:0;
+    width:100%;
+    a{
+        @include px2px(font-size,22);
+        color:$color_9E9E9E;
+        text-align:center;
+        margin:0;
+        padding:px2rem(6) 0;
+        p{
+            margin-top:px2rem(10);
+            padding-bottom:px2rem(6);
+        }
+        &.on{
+            color:#55C1DD;
+            /* background:#ffead9; */
+            border-radius:px2rem(6);
+            em{
+                background:url("../images/cart/home_on.png") no-repeat;
+                background-size:contain;
+                &.desc{
+                    background:url("../images/cart/destination_on.png") no-repeat;
+                    background-size:contain;
+                }
+                &.shop_cart{
+                    background:url("../images/cart/cart_on.png") no-repeat;
+                    background-size:contain;
+                }
+                &.my{
+                    background:url("../images/cart/mine_on.png") no-repeat;
+                    background-size:contain;
+                }
+            }
+        }
+    }
+    em{
+        display:inline-block;
+        width:px2rem(43);
+        height:px2rem(41);
+        background:url("../images/cart/home.png") no-repeat;
+        background-size:contain;
+        &.desc{
+            background:url("../images/cart/destination.png") no-repeat;
+            background-size:contain;
+        }
+        &.shop_cart{
+            background:url("../images/cart/cart.png") no-repeat;
+            background-size:contain;
+            position:relative;
+            &:after{
+                content: attr(data-count);
+                position: absolute;
+                right:px2rem(-30);
+                top:px2rem(-6);
+                @include px2px(font-size,18);
+                /*width:px2rem(36);
+                height: px2rem(24);
+                line-height:px2rem(24);*/
+                @include px2px(width,36);
+                @include px2px(height,24);
+                @include px2px(line-height,24);
+                text-align: center;
+                border-radius:px2rem(20);
+                color: #ffffff;
+                background:$color_FC5D7B;
+                white-space: pre;
+            }
+            &[data-count='0']:after{
+                display:none;
+            }
+        }
+        &.my{
+            background:url("../images/cart/mine.png") no-repeat;
+            background-size:contain;
+        }
+    }
+}
