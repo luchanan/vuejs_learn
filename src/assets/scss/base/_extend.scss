@@ -38,3 +38,19 @@
 .padding_24{
   padding:px2rem(24);
 }
+.flex{
+  display: flex;
+  &.flex_v_center{
+    align-items:center;
+  }
+  .flex_item{
+    flex: 1;
+  }
+}
+.xoverflow_scroll{
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.bg_lazyload{
+  background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=");
+}
