@@ -1,3 +1,4 @@
+/*@import "mixin.scss";*/
 .pointer{
    cursor:pointer;
  }
@@ -53,4 +54,15 @@
 }
 .bg_lazyload{
   background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=");
+}
+.mint-swipe-indicator{
+    @include px2px(width,10);
+    @include px2px(height,10);
+    margin:0 px2rem(10) 0 0 !important;
+    background:url(../../assets/images/icon/dot.png) scroll no-repeat center center;
+    @extend .contain;
+    &.is-active{
+      background:url(../../assets/images/icon/dot_on.png) scroll no-repeat center center;
+      @extend .contain;
+    }
 }

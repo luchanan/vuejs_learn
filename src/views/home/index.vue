@@ -2,9 +2,7 @@
   <div class="container">
     <home-header></home-header>
     <swipe class="my-swipe">
-      <swipe-item class="slide slide1"></swipe-item>
-      <swipe-item class="slide slide2"></swipe-item>
-      <swipe-item class="slide slide3"></swipe-item>
+      <swipe-item class="slide cover" v-for="banner in bannerList" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></swipe-item>
     </swipe>
     <div class="item boutique">
       <h1 class="title">精选频道</h1>
@@ -51,23 +49,60 @@
     <div class="item surprise">
       <h1 class="title">当季惊喜</h1>
       <div class="scroll">
-        <ul class="recomment">
+        <ul>
           <li>
             <a href="">
               <div class="bg bg_lazyload"></div>
-              <div class="text flex flex_v_center"><div class="flex_item">普吉</div></div>
+              <div class="bottom_title">
+                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
+                <div class="flex">
+                  <div class="left flex_item">已售288份</div>
+                  <div class="right flex_item">386</div>
+                </div>
+              </div>
             </a>
           </li>
           <li>
             <a href="">
               <div class="bg bg_lazyload"></div>
-              <div class="text flex flex_v_center"><div class="flex_item">普吉</div></div>
+              <div class="bottom_title">
+                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
+                <div class="flex">
+                  <div class="left flex_item">已售288份</div>
+                  <div class="right flex_item">386</div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="item surprise list">
+      <h1 class="title">精选</h1>
+      <div class="scroll">
+        <ul>
+          <li>
+            <a href="">
+              <div class="bg bg_lazyload"></div>
+              <div class="bottom_title">
+                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
+                <div class="flex">
+                  <div class="left flex_item">已售288份</div>
+                  <div class="right flex_item">386</div>
+                </div>
+              </div>
             </a>
           </li>
           <li>
             <a href="">
               <div class="bg bg_lazyload"></div>
-              <div class="text flex flex_v_center"><div class="flex_item">普吉</div></div>
+              <div class="bottom_title">
+                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
+                <div class="flex">
+                  <div class="left flex_item">已售288份</div>
+                  <div class="right flex_item">386</div>
+                </div>
+              </div>
             </a>
           </li>
         </ul>
@@ -90,8 +125,16 @@
   export default{
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        bannerList: []
       }
+    },
+    mounted: function () {
+      this.$http.get('static/api/Home/homepageV3.json').then((response) => {
+        // 为bannerList赋值数据，然后html就可以遍历
+        this.bannerList = response.data.banner_list
+      }, (response) => {
+        console.log(response)
+      })
     },
     // 注册组件
     components: {
@@ -119,25 +162,6 @@
   .my-swipe {
     /*padding-top:66.66666666666667%;/*500/700*/
     height: px2rem(500);
-  }
-
-  .slide {
-
-  }
-
-  .slide1 {
-    background-color: #0089dc;
-    color: #fff;
-  }
-
-  .slide2 {
-    background-color: #ffd705;
-    color: #000;
-  }
-
-  .slide3 {
-    background-color: #ff2d4b;
-    color: #fff;
   }
   /*index*/
   .title{
@@ -202,6 +226,82 @@
     }
     .scroll{
       height: px2rem(257);
+    }
+  }
+  .surprise{
+    &.list{
+     padding-bottom:0;
+     ul{
+       padding: 0;
+     }
+  .scroll,ul,a{
+    height: auto;
+    width: auto;
+  }
+  .bg{
+    width: px2rem(690);
+    height: px2rem(436);
+  }
+      li{
+        display: block;
+        margin: 0 0 px2rem(30) 0;
+        padding: 0 px2rem(30);
+      &:last-child{
+    margin-bottom: 0;
+    a{
+      border-bottom: 0;
+    }
+       }
+        a{
+          border-bottom: solid 1px $color_DBDBDB;
+        }
+      }
+     }
+    .scroll{
+      height: px2rem(579);
+    }
+    ul{
+      height: px2rem(589);
+      a{
+        width: px2rem(655);
+        height: px2rem(436);
+      }
+    }
+  }
+  .bottom_title{
+    color:$color_424242;
+    h2{
+      line-height: px2rem(42);
+      max-height: px2rem(84);
+      @include clamp(2);
+      padding: px2rem(34) 0 px2rem(11) 0;
+      @include px2px(font-size,34);
+    }
+    .flex{
+      color:$color_9E9E9E;
+      @include px2px(font-size,28);
+      .flex_item{
+        line-height:2;
+      }
+      .right{
+        text-align: right;
+        color:$color_FC5D7B;
+        &:before{
+          content: '¥';
+          display: inline-block;
+          margin-right: px2rem(7);
+          @include px2px(font-size,22);
+          vertical-align: top;
+
+        }
+        &:after{
+           content: '起';
+           display: inline-block;
+           margin-left: px2rem(5);
+           @include px2px(font-size,22);
+           color:$color_9E9E9E;
+         }
+      }
     }
   }
 </style>

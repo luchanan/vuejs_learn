@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App'
 import routers from './routers'
+var vueResource = require('vue-resource')
+Vue.use(vueResource)
 // require('assets/js/lib/flexible/flexible.js')
 // require('assets/js/lib/flexible/flexible.js')
 // import './assets/js/lib/bootstrap/bootstrap'
