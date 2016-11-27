@@ -3,6 +3,8 @@ import App from './App'
 import routers from './routers'
 var vueResource = require('vue-resource')
 Vue.use(vueResource)
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload)
 // require('assets/js/lib/flexible/flexible.js')
 // require('assets/js/lib/flexible/flexible.js')
 // import './assets/js/lib/bootstrap/bootstrap'
