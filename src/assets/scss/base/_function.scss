@@ -10,3 +10,8 @@ $rem:75;/*基准数也就是html,font-size有关:设计稿大小为640,转变就
     @return ($px/$rem)*1rem;
 }
 
+@function important(){
+  @return !important;
+}
+
+

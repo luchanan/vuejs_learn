@@ -12,10 +12,10 @@
   display: inline-block;
 }
 .cover{
-  background-size:cover !important;
+  background-size:cover important();
 }
 .contain{
-  background-size:contain !important;
+  background-size:contain important();
 }
 .clearfix:after {
   content: "";
@@ -52,17 +52,42 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-.bg_lazyload{
-  background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=");
-}
 .mint-swipe-indicator{
     @include px2px(width,10);
     @include px2px(height,10);
-    margin:0 px2rem(10) 0 0 !important;
-    background:url(../../assets/images/icon/dot.png) scroll no-repeat center center;
+    margin:0 px2rem(10) 0 0 important();
+    background:$color_F3F5F8 url(../../assets/images/icon/dot.png) scroll no-repeat center center;
     @extend .contain;
     &.is-active{
-      background:url(../../assets/images/icon/dot_on.png) scroll no-repeat center center;
+      background:$color_F3F5F8 url(../../assets/images/icon/dot_on.png) scroll no-repeat center center;
       @extend .contain;
     }
 }
+/*lazyload*/
+/*background lazyload style*/
+.bg_lazyload{
+  &[lazy=loading]{
+    background:url(../../assets/images/icon/lazy_load_loading.png) scroll no-repeat center center !important();
+    background-size: px2rem(159) important();
+  }
+  &[lazy=error]{
+    background:url(../../assets/images/icon/lazy_load_fail.png) scroll no-repeat center center !important();
+    background-size: px2rem(138) important();
+  }
+  &[lazy=loaded]{
+    @extend .cover;
+  }
+}
+/*img lazyload style*/
+.img_lazyload{
+  &[lazy=loading]{
+
+  }
+  &[lazy=error]{
+
+  }
+  &[lazy=loaded]{
+
+  }
+}
+/*lazyload*/

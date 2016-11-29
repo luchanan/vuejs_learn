@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <home-header></home-header>
-    <swipe class="my-swipe" :auto="5000">
-      <swipe-item class="slide cover" v-for="banner in indexData.banner_list" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }"></swipe-item>
+    <swipe class="swipe" :auto="5000">
+      <swipe-item class="slide cover" v-for="banner in indexData.banner_list" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }">
+        <a href=""></a>
+      </swipe-item>
     </swipe>
     <div class="item boutique">
       <h1 class="title">精选频道</h1>
@@ -10,7 +12,7 @@
         <ul>
           <li v-for="line in indexData.line_list">
             <a href="">
-              <div class="bg cover bg_lazyload" v-lazy:background-image="line.image"></div>
+              <div class="bg bg_lazyload" v-lazy:background-image="line.image"></div>
             </a>
           </li>
         </ul>
@@ -25,7 +27,7 @@
         <ul>
           <li v-for="item in list.data">
             <a href="">
-              <div class="bg bg_lazyload cover" v-bind:style="{ 'background-image': 'url(' + item.image + ')' }"></div>
+              <div class="bg bg_lazyload" v-lazy:background-image="item.image"></div>
               <!--目的地-->
               <div class="text flex flex_v_center" v-if="list.display_type==3&&list.data_type==2"><div class="flex_item">{{item.title}}</div></div>
               <!--图文-->
@@ -195,11 +197,15 @@
 <style lang='scss' scoped>
   @import "../../assets/scss/base/necessary.scss";
   html,body{
-    background: #fff;
+    background: #fff !important;
   }
-  .my-swipe {
+  .swipe {
     /*padding-top:66.66666666666667%;/*500/700*/
     height: px2rem(500);
+    a{
+      width: 100%;
+      height: 100%;
+    }
   }
   /*index*/
   .title{

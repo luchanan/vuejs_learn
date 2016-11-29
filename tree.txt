@@ -1,0 +1,135 @@
+卷 工作环境 的文件夹 PATH 列表
+卷序列号为 0000-1730
+F:.
+│  .babelrc
+│  .editorconfig
+│  .eslintignore
+│  .eslintrc.js
+│  .gitignore
+│  index.html
+│  package.json
+│  README.md      
+├─build
+│      build.js
+│      dev-client.js
+│      dev-server.js
+│      utils.js
+│      webpack.base.conf.js
+│      webpack.dev.conf.js
+│      webpack.prod.conf.js
+│      
+├─config
+│      dev.env.js
+│      index.js
+│      prod.env.js
+│      test.env.js
+│      
+├─node_modules
+│          
+├─note
+│      byluchanan.docx
+│      
+├─src
+│  │  App.vue
+│  │  filters.js
+│  │  main.js
+│  │  routers.js
+│  │  
+│  ├─assets
+│  │  │  logo.png
+│  │  │  
+│  │  ├─css
+│  │  │      test.css
+│  │  │      
+│  │  ├─font
+│  │  │      test.css
+│  │  │      
+│  │  ├─images
+│  │  │  └─icon
+│  │  │          dot.png
+│  │  │          dot_on.png
+│  │  │          search.png
+│  │  │          service.png
+│  │  │          
+│  │  ├─js
+│  │  │  │  test.css
+│  │  │  │  
+│  │  │  └─lib
+│  │  │      │  base64.js
+│  │  │      │  
+│  │  │      └─jquery
+│  │  │              jquery.cookie.js
+│  │  │              jquery.js
+│  │  │              jQuery.md5.js
+│  │  │              
+│  │  └─scss
+│  │      │  common.scss
+│  │      │  index.scss
+│  │      │  
+│  │      └─base
+│  │              _common.scss
+│  │              _cssreset.scss
+│  │              _extend.scss
+│  │              _footer.scss
+│  │              _function.scss
+│  │              _header.scss
+│  │              _mixin.scss
+│  │              _necessary.scss
+│  │              _variable.scss
+│  │              
+│  ├─components
+│  │  │  Hello.vue
+│  │  │  
+│  │  ├─common
+│  │  │      search-icon.vue
+│  │  │      service-icon.vue
+│  │  │      
+│  │  └─home
+│  │          home-banner.vue
+│  │          home-header.vue
+│  │          home-topic.vue
+│  │          
+│  ├─views
+│  │  └─home
+│  │          index.vue
+│  │          
+│  └─vuex
+│          test.css
+│          
+├─static
+│  │  .gitkeep
+│  │  
+│  ├─api
+│  │  │  .gitkeep
+│  │  │  
+│  │  └─Home
+│  │      │  homepageV3.json
+│  │      │  
+│  │      └─images
+│  │              
+│  └─js
+│      └─lib
+│          │  base64.js
+│          │  
+│          └─flexible
+│                  flexible.js
+│                  
+└─test
+    ├─e2e
+    │  │  nightwatch.conf.js
+    │  │  runner.js
+    │  │  
+    │  ├─custom-assertions
+    │  │      elementCount.js
+    │  │      
+    │  └─specs
+    │          test.js
+    │          
+    └─unit
+        │  .eslintrc
+        │  index.js
+        │  karma.conf.js
+        │  
+        └─specs
+                Hello.spec.js
+                
