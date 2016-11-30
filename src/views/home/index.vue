@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container padding_b_120">
     <home-header></home-header>
-    <swipe class="swipe" :auto="5000">
+    <swipe class="swipe" :auto="50000">
       <swipe-item class="slide cover" v-for="banner in indexData.banner_list" v-bind:style="{ 'background-image': 'url(' + banner.image + ')' }">
         <a href=""></a>
       </swipe-item>
@@ -43,111 +43,8 @@
         </ul>
       </div>
     </div>
-    <!--<div class="item">
-      <h1 class="title">热门目的地</h1>
-      <div class="scroll">
-      <ul>
-        <li>
-          <a href="">
-            <div class="bg bg_lazyload"></div>
-            <div class="text flex flex_v_center"><div class="flex_item">普吉</div></div>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="bg bg_lazyload"></div>
-            <div class="text flex flex_v_center"><div class="flex_item">普吉</div></div>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div class="bg bg_lazyload"></div>
-            <div class="text flex flex_v_center"><div class="flex_item">普吉</div></div>
-          </a>
-        </li>
-      </ul>
-      </div>
-    </div>
-    <div class="item surprise">
-      <h1 class="title">当季惊喜</h1>
-      <div class="scroll">
-        <ul>
-          <li>
-            <a href="">
-              <div class="bg bg_lazyload"></div>
-              <div class="bottom_title">
-                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
-                <div class="flex">
-                  <div class="left flex_item">已售288份</div>
-                  <div class="right flex_item">386</div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="bg bg_lazyload"></div>
-              <div class="bottom_title">
-                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
-                <div class="flex">
-                  <div class="left flex_item">已售288份</div>
-                  <div class="right flex_item">386</div>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="item surprise activity">
-      <h1 class="title">当季惊喜</h1>
-      <div class="scroll">
-        <ul>
-          <li>
-            <a href="">
-              <div class="bg bg_lazyload"></div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="bg bg_lazyload"></div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="item surprise list">
-      <h1 class="title">精选</h1>
-      <div class="scroll">
-        <ul>
-          <li>
-            <a href="">
-              <div class="bg bg_lazyload"></div>
-              <div class="bottom_title">
-                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
-                <div class="flex">
-                  <div class="left flex_item">已售288份</div>
-                  <div class="right flex_item">386</div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <div class="bg bg_lazyload"></div>
-              <div class="bottom_title">
-                <h2>毛里求斯皮划艇游琥珀岛 穿梭红树林</h2>
-                <div class="flex">
-                  <div class="left flex_item">已售288份</div>
-                  <div class="right flex_item">386</div>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>-->
     <button v-on:click="addTodo" class="btn" style="display:none">点击</button>
+    <home-footer></home-footer>
 </template>
 <script>
   // js引入css文件
@@ -159,6 +56,7 @@
   // import $ from 'expose?$!expose?jQuery!jquery'
   import homeHeader from '../../components/home/home-header.vue'
   import HomeBanner from '../../components/home/home-banner.vue'
+  import footer from '../../components/common/footer.vue'
   // 引入vue-swipe
   import { Swipe, SwipeItem } from 'vue-swipe'
   export default{
@@ -181,7 +79,8 @@
       'home-header': homeHeader,
       'home-banner': HomeBanner,
       'swipe': Swipe,
-      'swipe-item': SwipeItem
+      'swipe-item': SwipeItem,
+      'home-footer': footer
     },
 
     methods: {
@@ -197,7 +96,7 @@
 <style lang='scss' scoped>
   @import "../../assets/scss/base/necessary.scss";
   html,body{
-    background: #fff !important;
+    background: $white;
   }
   .swipe {
     /*padding-top:66.66666666666667%;/*500/700*/
@@ -282,7 +181,13 @@
         }
      }
     &.list{
+    border-bottom: none;
      padding-bottom:0;
+     .bottom_title{
+       .flex{
+         padding-bottom: px2rem(14);
+       }
+     }
      ul{
        padding: 0;
      }
@@ -299,10 +204,10 @@
         margin: 0 0 px2rem(30) 0;
         padding: 0 px2rem(30);
       &:last-child{
-    margin-bottom: 0;
-    a{
-      border-bottom: 0;
-    }
+          margin-bottom: 0;
+          a{
+            border-bottom: 0;
+          }
        }
         a{
           border-bottom: solid 1px $color_DBDBDB;
@@ -355,5 +260,8 @@
          }
       }
     }
+  }
+  html,body{
+    background: #fff !important;
   }
 </style>
